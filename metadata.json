@@ -1,0 +1,7 @@
+{
+  "name": "GP Pintura - Professional Painting Services",
+  "description": "Modern, high-performance website for GP Pintura, showcasing residential and commercial painting services with an integrated AI color consultant.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

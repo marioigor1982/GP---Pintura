@@ -1,0 +1,45 @@
+
+==================================================
+GP PINTURA - ESPECIFICAÇÕES TÉCNICAS DO PROJETO
+==================================================
+
+1. PALETA DE CORES OFICIAL
+--------------------------------------------------
+As cores abaixo foram selecionadas para refletir profissionalismo,
+arte e sofisticação em reformas e construções.
+
+- CINZA EXECUTIVO:  #565759 (Textos secundários, Rodapé, Elementos Neutros)
+- LARANJA PRIMARY:  #F2955E (Chamadas de ação, Ícones, Destaques)
+- LARANJA BRILHO:   #F2865E (Hover states, Gradientes, Botões ativos)
+- TERRACOTA ARTE:   #A66D58 (Destaques artísticos, Detalhes de tipografia)
+- OFF-WHITE/LIGHT:  #F2F2F2 (Fundo do site, Seções de contraste)
+
+2. TIPOGRAFIA
+--------------------------------------------------
+- Fonte Principal: Poppins (Google Fonts)
+- Pesos Utilizados: 300, 400, 500, 600, 700, 900
+- Estilo: Sans-serif moderna, geométrica e de alta legibilidade.
+
+3. TECNOLOGIAS UTILIZADAS
+--------------------------------------------------
+- Core: React 19 (com ESM Modules)
+- Estilização: Tailwind CSS (Configuração customizada de tema)
+- Ícones: Lucide React (Consistência e leveza)
+- Inteligência Artificial: Google Gemini API (Consultor de Cores Integrado)
+- Efeitos: Backdrop-filter (Glassmorphism), Animações nativas Tailwind.
+
+4. DETALHES DE UX/UI
+--------------------------------------------------
+- Navbar: Transparente ao topo, efeito vidro (Glassmorphism) ao rolar.
+- Hero: Slideshow dinâmico com cross-fade de 2s e zoom sutil.
+- Espaçamento: Line-height aumentado em títulos (1.4 - 1.5) para visual premium.
+- Mobile First: Design totalmente responsivo para dispositivos móveis.
+
+5. CONTATOS E LINKS
+--------------------------------------------------
+- WhatsApp: 5562981264726
+- Instagram: @gppintura
+- Logo: https://i.postimg.cc/tJdgyb4N/GP-PINTURA-removebg-preview.png
+
+Documento gerado em: Dezembro/2024
+Propriedade de GP Pintura - Reforma e Construção
