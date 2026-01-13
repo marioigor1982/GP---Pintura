@@ -1,12 +1,12 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Bot, User, Loader2, Sparkles, X } from 'lucide-react';
+import { Send, Bot, User, Loader2, Sparkles } from 'lucide-react';
 import { getColorAdvice } from '../services/gemini';
 import { Message } from '../types';
 
 const AIConsultant: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'model', text: 'Hello! I am your GP Pintura AI Color Consultant. Need help picking the perfect shade for your living room or office? Ask me anything!' }
+    { role: 'model', text: 'Olá! Eu sou o Consultor de Cores da GP Pintura. Precisa de ajuda para escolher o tom perfeito para sua sala ou escritório? Pergunte-me qualquer coisa!' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -45,10 +45,10 @@ const AIConsultant: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-orange-500/20 text-orange-400 px-4 py-1.5 rounded-full mb-4">
             <Sparkles size={16} />
-            <span className="text-sm font-bold uppercase tracking-widest">AI-Powered Experience</span>
+            <span className="text-sm font-bold uppercase tracking-widest">Experiência com IA</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">AI Color Consultant</h2>
-          <p className="text-slate-400 text-lg">Not sure which color to pick? Get expert AI advice tailored to your space.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Consultor de Cores IA</h2>
+          <p className="text-slate-400 text-lg">Não tem certeza de qual cor escolher? Obtenha conselhos de especialistas em IA personalizados para o seu espaço.</p>
         </div>
 
         <div className="bg-slate-800 rounded-3xl border border-slate-700 shadow-2xl overflow-hidden flex flex-col h-[600px]">
@@ -59,7 +59,7 @@ const AIConsultant: React.FC = () => {
                 <Bot size={22} className="text-white" />
               </div>
               <div>
-                <p className="font-bold leading-none">GP Assistant</p>
+                <p className="font-bold leading-none">Assistente GP</p>
                 <p className="text-xs text-orange-400 mt-1 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span> Online
                 </p>
@@ -92,7 +92,7 @@ const AIConsultant: React.FC = () => {
                   </div>
                   <div className="bg-slate-700 p-4 rounded-2xl rounded-tl-none flex items-center gap-2">
                     <Loader2 size={18} className="animate-spin text-orange-500" />
-                    <span className="text-slate-400 text-sm italic">Mixing palettes...</span>
+                    <span className="text-slate-400 text-sm italic">Misturando paletas...</span>
                   </div>
                 </div>
               </div>
@@ -107,7 +107,7 @@ const AIConsultant: React.FC = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Ask for color suggestions (e.g., 'Modern living room palette')"
+                placeholder="Peça sugestões de cores (ex: 'Paleta moderna para sala')"
                 className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-colors pr-12"
               />
               <button
@@ -118,7 +118,7 @@ const AIConsultant: React.FC = () => {
                 <Send size={18} />
               </button>
             </div>
-            <p className="text-[10px] text-center text-slate-500 mt-2">Powered by Gemini AI for professional guidance</p>
+            <p className="text-[10px] text-center text-slate-500 mt-2">Alimentado por Gemini AI para orientação profissional</p>
           </div>
         </div>
       </div>
