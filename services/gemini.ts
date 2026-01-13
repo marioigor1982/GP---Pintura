@@ -1,12 +1,11 @@
 
-import { GoogleGenAI, Type } from "@google/genai";
-
-const apiKey = process.env.API_KEY || '';
-const genAI = new GoogleGenAI({ apiKey });
+import { GoogleGenAI } from "@google/genai";
 
 export const getColorAdvice = async (userQuery: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) => {
   try {
+    // Inicialização correta conforme diretrizes
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: [
@@ -14,7 +13,7 @@ export const getColorAdvice = async (userQuery: string, history: { role: 'user' 
         { role: 'user', parts: [{ text: userQuery }] }
       ],
       config: {
-        systemInstruction: "You are the GP Pintura AI Color Consultant. Help users choose paint colors for their residential or commercial spaces. Be professional, creative, and concise. Suggest complementary palettes and consider lighting and space size. If the user asks for GP Pintura services, mention we do both residential and commercial work.",
+        systemInstruction: "Você é o Consultor de Cores de IA da GP Pintura. Ajude os usuários a escolher cores de tinta para seus espaços residenciais ou comerciais. Seja profissional, criativo e conciso. Sugira paletas complementares e considere a iluminação e o tamanho do espaço. Se o usuário perguntar sobre os serviços da GP Pintura, mencione que realizamos trabalhos residenciais e comerciais com excelência.",
         temperature: 0.7,
         topP: 0.95,
       },
@@ -23,6 +22,6 @@ export const getColorAdvice = async (userQuery: string, history: { role: 'user' 
     return response.text;
   } catch (error) {
     console.error("Gemini Error:", error);
-    return "I'm having a little trouble connecting to my color database right now. Please try again or contact GP Pintura directly for expert advice!";
+    return "Estou com um pouco de dificuldade para acessar meu banco de dados de cores agora. Por favor, tente novamente ou entre em contato diretamente com a GP Pintura para um aconselhamento especializado!";
   }
 };
