@@ -5,13 +5,15 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 interface MediaItem {
   url: string;
   type: 'image' | 'video';
+  label?: string;
 }
 
 const media: MediaItem[] = [
-  { url: 'https://i.postimg.cc/tgzD1Zvw/ali_mkumbwa_1iho4gv_I4_g_unsplash.jpg', type: 'image' },
-  { url: 'https://ik.imagekit.io/marioigor82/Color_Splash.mp4', type: 'video' },
-  { url: 'https://i.postimg.cc/SQvxCgwg/gp10.jpg', type: 'image' },
-  { url: 'https://i.postimg.cc/dQxVr5zk/gp1.jpg', type: 'image' },
+  { url: 'https://i.postimg.cc/tgzD1Zvw/ali_mkumbwa_1iho4gv_I4_g_unsplash.jpg', type: 'image', label: 'Projeto Residencial' },
+  { url: 'https://ik.imagekit.io/marioigor82/Color_Splash.mp4', type: 'video', label: 'Color Splash' },
+  { url: 'https://i.postimg.cc/SQvxCgwg/gp10.jpg', type: 'image', label: 'Acabamento Premium' },
+  { url: 'https://ik.imagekit.io/marioigor82/pintura_interiores_01.mp4', type: 'video', label: 'Pintura Interiores' },
+  { url: 'https://i.postimg.cc/dQxVr5zk/gp1.jpg', type: 'image', label: 'Renovação Total' },
 ];
 
 const Hero: React.FC = () => {
@@ -22,7 +24,7 @@ const Hero: React.FC = () => {
     const isVideo = media[currentIdx].type === 'video';
     
     if (isVideo) {
-      // Se for vídeo, damos um tempo maior para a exibição (ou duração do vídeo)
+      // Se for vídeo, damos um tempo maior para a exibição ou esperamos a ação do usuário
       const timer = setTimeout(() => {
         setCurrentIdx((prev) => (prev + 1) % media.length);
       }, 12000); 
@@ -78,7 +80,7 @@ const Hero: React.FC = () => {
                 FAÇA UM <span className="text-orange-500">ORÇAMENTO</span>
               </h1>
               <p className="text-lg md:text-2xl text-slate-200 mb-10 max-w-2xl font-medium drop-shadow-md">
-                Qualidade superior e atendimento personalizado para o seu projeto.
+                Qualidade superior e atendimento personalizado para o seu projeto de pintura.
               </p>
               <a 
                 href="https://wa.me/5562981264726"
@@ -131,7 +133,7 @@ const Hero: React.FC = () => {
             onClick={() => setCurrentIdx(i)}
           >
             <span className={`text-[10px] font-bold uppercase tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity ${i === currentIdx ? 'opacity-100 text-orange-500' : ''}`}>
-              {item.type === 'video' ? 'Vídeo Destaque' : `Projeto 0${i + 1}`}
+              {item.label || (item.type === 'video' ? 'Vídeo Destaque' : `Projeto 0${i + 1}`)}
             </span>
             <div className={`h-1 rounded-full transition-all duration-500 ${
               i === currentIdx ? 'w-12 bg-orange-500' : 'w-6 bg-white/30 hover:bg-white/50'
@@ -148,5 +150,4 @@ const Hero: React.FC = () => {
   );
 };
 
-// Adicionando export default para corrigir erro no App.tsx
 export default Hero;
