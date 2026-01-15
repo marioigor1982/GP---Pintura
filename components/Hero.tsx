@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-0 w-full mt-10 lg:mt-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pt-40 md:pb-24 w-full">
         <div className="max-w-4xl mx-auto lg:mx-0 transition-all duration-700 ease-in-out transform text-center lg:text-left">
           {isBudgetText ? (
             <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000">
