@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
@@ -9,11 +8,10 @@ interface MediaItem {
 }
 
 const media: MediaItem[] = [
+  { url: 'https://ik.imagekit.io/marioigor82/media%20azul.mp4', type: 'video', label: 'Pintura de Elite' },
+  { url: 'https://ik.imagekit.io/marioigor82/media.mp4', type: 'video', label: 'Excelência em Movimento' },
   { url: 'https://i.postimg.cc/tgzD1Zvw/ali_mkumbwa_1iho4gv_I4_g_unsplash.jpg', type: 'image', label: 'Projeto Residencial' },
-  { url: 'https://ik.imagekit.io/marioigor82/Color_Splash.mp4', type: 'video', label: 'Color Splash' },
   { url: 'https://i.postimg.cc/SQvxCgwg/gp10.jpg', type: 'image', label: 'Acabamento Premium' },
-  { url: 'https://ik.imagekit.io/marioigor82/pintura_interiores_01.mp4', type: 'video', label: 'Pintura Interiores' },
-  { url: 'https://i.postimg.cc/dQxVr5zk/gp1.jpg', type: 'image', label: 'Renovação Total' },
 ];
 
 const Hero: React.FC = () => {
@@ -113,7 +111,7 @@ const Hero: React.FC = () => {
                 </a>
                 <a 
                   href="#contact"
-                  className="group bg-orange-500 text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-orange-600 transition-all text-center flex items-center justify-center gap-2"
+                  className="group bg-orange-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-all text-center flex items-center justify-center gap-2 shadow-xl shadow-orange-500/25"
                 >
                   Contato Direto
                 </a>
