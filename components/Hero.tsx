@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
   const isBudgetText = currentMedia.type === 'video';
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0 bg-slate-900">
         {media.map((item, index) => (
@@ -66,27 +66,27 @@ const Hero: React.FC = () => {
                 className="absolute inset-0 w-full h-full object-cover"
               />
             )}
-            {/* Darker consistent overlay for text legibility */}
-            <div className="absolute inset-0 bg-slate-900/40 md:bg-transparent md:bg-gradient-to-r md:from-slate-900/80 md:via-slate-900/40 md:to-transparent"></div>
+            {/* Consistent Overlay for better text rendering */}
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/70 lg:bg-gradient-to-r lg:from-slate-900/80 lg:to-transparent"></div>
           </div>
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-40 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-0 w-full mt-10 lg:mt-0">
         <div className="max-w-4xl mx-auto lg:mx-0 transition-all duration-700 ease-in-out transform text-center lg:text-left">
           {isBudgetText ? (
             <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000">
-              <h1 className="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter uppercase drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
+              <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-8xl font-black text-white mb-4 md:mb-8 tracking-tighter uppercase drop-shadow-xl">
                 FAÇA UM <span className="text-orange-500">ORÇAMENTO</span>
               </h1>
-              <p className="text-base md:text-2xl text-slate-200 mb-8 md:mb-10 max-w-2xl mx-auto lg:mx-0 font-medium drop-shadow-md">
+              <p className="text-sm xs:text-base md:text-2xl text-slate-100 mb-6 md:mb-10 max-w-2xl mx-auto lg:mx-0 font-medium drop-shadow-lg">
                 Qualidade superior e atendimento personalizado para o seu projeto de pintura.
               </p>
               <a 
                 href="https://wa.me/5562981264726"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-4 bg-orange-500 text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl font-black text-lg md:text-xl hover:bg-orange-600 transition-all shadow-2xl shadow-orange-500/40 group hover:scale-105"
+                className="inline-flex items-center gap-3 md:gap-4 bg-orange-500 text-white px-6 xs:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-black text-base xs:text-lg md:text-xl hover:bg-orange-600 transition-all shadow-2xl shadow-orange-500/40 group hover:scale-105 active:scale-95"
               >
                 SOLICITAR AGORA
                 <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
@@ -94,27 +94,26 @@ const Hero: React.FC = () => {
             </div>
           ) : (
             <div className="animate-in fade-in duration-1000">
-              <h2 className="text-orange-500 font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 drop-shadow-md">GP Pintura • Excelência</h2>
-              <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-6 md:mb-8 leading-tight drop-shadow-2xl">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 md:mb-8 leading-tight drop-shadow-2xl">
                 Transformando seu espaço <br className="hidden md:block" />
                 <span className="text-orange-500 italic">com arte</span> em cada detalhe.
               </h1>
               
-              <p className="text-base md:text-xl text-slate-200 mb-8 md:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-md font-medium">
+              <p className="text-sm xs:text-base md:text-xl text-slate-100 mb-6 md:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-lg font-medium">
                 A GP Pintura oferece serviços premium residenciais e comerciais que transformam ambientes comuns em verdadeiras obras de arte.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a 
                   href="#portfolio"
-                  className="group bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-slate-900 transition-all text-center flex items-center justify-center gap-2 shadow-xl"
+                  className="group bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-white hover:text-slate-900 transition-all text-center flex items-center justify-center gap-2"
                 >
                   Nosso Portfólio
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a 
                   href="#contact"
-                  className="group bg-orange-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-all text-center flex items-center justify-center gap-2 shadow-xl shadow-orange-500/25"
+                  className="group bg-orange-500 text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-orange-600 transition-all text-center flex items-center justify-center gap-2"
                 >
                   Contato Direto
                 </a>
@@ -124,27 +123,27 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-10 right-4 md:right-8 flex flex-col gap-2 md:gap-3 z-20">
+      {/* Indicators optimized for touch and visibility */}
+      <div className="absolute bottom-6 right-4 md:bottom-10 md:right-8 flex flex-col gap-2 md:gap-3 z-20">
         {media.map((item, i) => (
           <div 
             key={i}
-            className="transition-all duration-500 cursor-pointer flex items-center justify-end gap-3 group"
+            className="transition-all duration-500 cursor-pointer flex items-center justify-end gap-3 group p-1"
             onClick={() => setCurrentIdx(i)}
           >
-            <span className={`text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity hidden md:block ${i === currentIdx ? 'opacity-100 text-orange-500' : ''}`}>
-              {item.label || (item.type === 'video' ? 'Vídeo Destaque' : `Projeto 0${i + 1}`)}
+            <span className={`text-[10px] font-bold uppercase tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity hidden md:block ${i === currentIdx ? 'opacity-100 text-orange-500' : ''}`}>
+              {item.label || `Projeto 0${i + 1}`}
             </span>
-            <div className={`h-1 rounded-full transition-all duration-500 ${
-              i === currentIdx ? 'w-8 md:w-12 bg-orange-500' : 'w-4 md:w-6 bg-white/30 hover:bg-white/50'
+            <div className={`h-1.5 rounded-full transition-all duration-500 ${
+              i === currentIdx ? 'w-10 md:w-12 bg-orange-500' : 'w-4 md:w-6 bg-white/40 hover:bg-white/60'
             }`} />
           </div>
         ))}
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white animate-bounce hidden md:block z-20">
-        <ChevronDown size={32} className="opacity-50" />
+      {/* Scroll Indicator - Hidden on very small screens to save space */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white animate-bounce hidden sm:block z-20 opacity-60">
+        <ChevronDown size={28} />
       </div>
     </section>
   );
