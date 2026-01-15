@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Instagram, Send, ArrowRight, Loader2, CheckCircle2, AlertCircle, RefreshCw } from 'lucide-react';
+import { INSTAGRAM_URL } from '../constants';
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -71,7 +72,7 @@ const Contact: React.FC = () => {
 
               <div className="flex items-start gap-5 group">
                 <div className="w-12 h-12 bg-slate-50 text-orange-500 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
-                  <Mail size={24} />
+                  <Mail size={24} className="group-hover:text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">E-mail</h4>
@@ -96,13 +97,13 @@ const Contact: React.FC = () => {
                 <p className="text-slate-400 text-sm">Acompanhe nossas obras no Instagram</p>
               </div>
               <a 
-                href="https://www.instagram.com/gppintura/" 
+                href={INSTAGRAM_URL} 
                 target="_blank" 
                 rel="noreferrer"
                 className="w-14 h-14 bg-gradient-to-tr from-orange-500 to-pink-500 rounded-2xl flex items-center justify-center hover:scale-110 transition-transform shadow-lg shadow-orange-500/20"
                 aria-label="Instagram"
               >
-                <Instagram size={28} />
+                <Instagram size={28} className="text-white" />
               </a>
             </div>
           </div>

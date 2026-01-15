@@ -7,7 +7,7 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import WhatsAppButton from './components/WhatsAppButton';
 import { Award, ShieldCheck, Clock, ThumbsUp, Instagram, MapPin, Mail, Briefcase, Phone, Calendar } from 'lucide-react';
-import { LOGO_URL } from './constants';
+import { LOGO_URL, INSTAGRAM_URL } from './constants';
 
 const App: React.FC = () => {
   return (
@@ -140,7 +140,7 @@ const App: React.FC = () => {
               {/* Logo Column */}
               <div className="flex flex-col items-center lg:items-start">
                 <div className="flex items-center gap-3 mb-6">
-                  <img src={LOGO_URL} alt="GP Pintura" className="h-14 w-auto drop-shadow-md" />
+                  <img src={LOGO_URL} alt="GP Pintura" className="h-16 w-auto drop-shadow-md object-contain" />
                   <div className="flex flex-col">
                     <span className="text-2xl font-black text-white leading-none tracking-tighter">GP PINTURA</span>
                     <span className="text-[9px] font-bold text-[#F2865E] tracking-[0.2em] uppercase mt-1">REFORMA E CONSTRUÇÃO</span>
@@ -150,11 +150,11 @@ const App: React.FC = () => {
                   Especialistas em acabamentos de alto padrão e transformações de ambientes.
                 </p>
                 <div className="flex gap-4">
-                  <a href="https://www.instagram.com/gppintura/" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#F2865E] hover:text-white transition-all">
-                    <Instagram size={20} />
+                  <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#F2865E] transition-all">
+                    <Instagram size={20} className="text-white" />
                   </a>
-                  <a href="mailto:contato@gppintura.com" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#F2865E] hover:text-white transition-all">
-                    <Mail size={20} />
+                  <a href="mailto:contato@gppintura.com" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#F2865E] transition-all">
+                    <Mail size={20} className="text-white" />
                   </a>
                 </div>
               </div>

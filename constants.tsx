@@ -44,4 +44,5 @@ export const PORTFOLIO: PortfolioItem[] = [
 ];
 
 export const LOGO_URL = "https://i.postimg.cc/tJdgyb4N/GP-PINTURA-removebg-preview.png";
+export const INSTAGRAM_URL = "https://www.instagram.com/pintura.gp/";
 export const INSTAGRAM_POST_URL = "https://www.instagram.com/p/ClGtCxCuCzy/";
