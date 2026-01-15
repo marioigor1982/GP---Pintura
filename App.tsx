@@ -202,8 +202,8 @@ const App: React.FC = () => {
             </div>
 
             {/* Bottom Copyright */}
-            <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] md:text-xs text-slate-500 uppercase tracking-widest font-bold">
-              <p>Copyright © 2019 - {new Date().getFullYear()} GP Pintura. Todos os direitos reservados.</p>
+            <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] md:text-xs text-slate-200 uppercase tracking-widest font-bold">
+              <p>Copyright © 2019 - 2026 GP Pintura. Todos os direitos reservados.</p>
               <p>Criado com <span className="text-[#F2865E]">Excelência</span> para você</p>
             </div>
           </div>

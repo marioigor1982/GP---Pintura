@@ -34,12 +34,14 @@ arte e sofisticação em reformas e construções.
 - Hero: Slideshow dinâmico com cross-fade de 2s e zoom sutil.
 - Espaçamento: Line-height aumentado em títulos (1.4 - 1.5) para visual premium.
 - Mobile First: Design totalmente responsivo para dispositivos móveis.
+- Footer: Copyright atualizado para 2026 em cor Gelo (text-slate-200).
 
 5. CONTATOS E LINKS
 --------------------------------------------------
 - WhatsApp: 5562981264726
-- Instagram: @gppintura
+- Instagram: @pintura.gp
 - Logo: https://i.postimg.cc/tJdgyb4N/GP-PINTURA-removebg-preview.png
 
-Documento gerado em: Dezembro/2024
+Documento atualizado em: Fevereiro/2025
 Propriedade de GP Pintura - Reforma e Construção
+Copyright © 2019 - 2026 GP Pintura. Todos os direitos reservados.
