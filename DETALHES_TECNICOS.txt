@@ -31,7 +31,9 @@ arte e sofisticação em reformas e construções.
 4. DETALHES DE UX/UI
 --------------------------------------------------
 - Navbar: Transparente ao topo, efeito vidro (Glassmorphism) ao rolar.
+- Navegação: Ordem personalizada (Início, Serviços, Sobre, Portfólio, Contato).
 - Hero: Slideshow dinâmico com cross-fade de 2s e zoom sutil.
+- Portfólio: Carousel responsivo com snap-scrolling e filtros dinâmicos.
 - Espaçamento: Line-height aumentado em títulos (1.4 - 1.5) para visual premium.
 - Mobile First: Design totalmente responsivo para dispositivos móveis.
 - Footer: Copyright atualizado para 2026 em cor Gelo (text-slate-200).
@@ -41,6 +43,12 @@ arte e sofisticação em reformas e construções.
 - WhatsApp: 5562981264726
 - Instagram: @pintura.gp
 - Logo: https://i.postimg.cc/tJdgyb4N/GP-PINTURA-removebg-preview.png
+
+6. PORTFÓLIO E PROJETOS
+--------------------------------------------------
+- Categorias Consolidadas: Residencial, Comercial.
+- Visualização: Carousel horizontal para "Todos" os projetos com scroll suave.
+- Cartões: Efeito de zoom na imagem e overlay de detalhes ao passar o mouse.
 
 Documento atualizado em: Fevereiro/2025
 Propriedade de GP Pintura - Reforma e Construção

@@ -10,7 +10,7 @@ export interface Service {
 export interface PortfolioItem {
   id: number;
   title: string;
-  category: 'Residencial' | 'Comercial' | 'Especial';
+  category: 'Residencial' | 'Comercial';
   imageUrl: string;
 }
 

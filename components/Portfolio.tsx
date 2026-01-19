@@ -1,33 +1,78 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Instagram, ArrowUpRight } from 'lucide-react';
 import { PORTFOLIO, INSTAGRAM_POST_URL } from '../constants';
+import { PortfolioItem } from '../types';
 
 const Portfolio: React.FC = () => {
-  const [filter, setFilter] = useState('Todos');
-  const categories = ['Todos', 'Residencial', 'Comercial', 'Especial'];
+  const [filter, setFilter] = useState<'Todos' | 'Residencial' | 'Comercial'>('Todos');
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
 
   const filteredItems = filter === 'Todos' 
     ? PORTFOLIO 
     : PORTFOLIO.filter(item => item.category === filter);
 
+  const categories: ('Todos' | 'Residencial' | 'Comercial')[] = ['Todos', 'Residencial', 'Comercial'];
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setShowLeftArrow(scrollLeft > 20);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 20);
+    }
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) {
+      el.addEventListener('scroll', checkScroll);
+      window.addEventListener('resize', checkScroll);
+      checkScroll();
+    }
+    return () => {
+      el?.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, [filter]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = scrollRef.current.clientWidth * 0.8;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section id="portfolio" className="py-20 md:py-24 bg-slate-50">
+    <section id="portfolio" className="py-24 md:py-32 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 md:mb-16 gap-8 text-center lg:text-left">
-          <div>
-            <h2 className="text-orange-500 font-bold tracking-widest uppercase text-xs md:text-sm mb-2">Nosso Portfólio</h2>
-            <h3 className="text-3xl md:text-5xl font-bold text-slate-900">Projetos em Destaque</h3>
+        {/* Header Section */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
+          <div className="text-center lg:text-left">
+            <h2 className="text-orange-500 font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-4">Portfólio de Elite</h2>
+            <h3 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase leading-none">
+              Projetos em <span className="text-orange-500">Destaque</span>
+            </h3>
+            <div className="h-1.5 w-24 bg-orange-500 mt-6 mx-auto lg:ml-0 rounded-full"></div>
           </div>
           
-          <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+          {/* Custom Tabs */}
+          <div className="flex bg-white p-1.5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 self-center lg:self-end">
             {categories.map(cat => (
               <button
                 key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-5 md:px-6 py-2 md:py-2.5 rounded-full text-sm font-semibold transition-all active:scale-95 ${
+                onClick={() => {
+                  setFilter(cat);
+                  if (scrollRef.current) scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+                }}
+                className={`px-6 md:px-8 py-3 rounded-xl text-sm font-black uppercase tracking-widest transition-all duration-300 ${
                   filter === cat 
-                  ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25' 
-                  : 'bg-white text-slate-600 hover:bg-slate-200 border border-slate-100 shadow-sm'
+                  ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30 scale-105' 
+                  : 'text-slate-500 hover:text-slate-900'
                 }`}
               >
                 {cat}
@@ -36,42 +81,127 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {filteredItems.map((item) => (
-            <div 
-              key={item.id} 
-              className="group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-xl transition-all duration-500"
+        {/* Carousel Container */}
+        <div className="relative group">
+          {/* Navigation Arrows */}
+          {showLeftArrow && (
+            <button 
+              onClick={() => scroll('left')}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-16 md:h-16 bg-white/90 backdrop-blur-md text-slate-900 rounded-full flex items-center justify-center shadow-2xl border border-slate-100 hover:bg-orange-500 hover:text-white transition-all duration-300 -translate-x-4 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"
+              aria-label="Anterior"
             >
-              <div className="aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] overflow-hidden">
-                <img 
-                  src={item.imageUrl} 
-                  alt={item.title} 
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                />
+              <ChevronLeft size={32} />
+            </button>
+          )}
+          {showRightArrow && (
+            <button 
+              onClick={() => scroll('right')}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-16 md:h-16 bg-white/90 backdrop-blur-md text-slate-900 rounded-full flex items-center justify-center shadow-2xl border border-slate-100 hover:bg-orange-500 hover:text-white transition-all duration-300 translate-x-4 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"
+              aria-label="Próximo"
+            >
+              <ChevronRight size={32} />
+            </button>
+          )}
+
+          {/* Scrolling Track */}
+          <div 
+            ref={scrollRef}
+            className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-12 pt-4 px-2"
+          >
+            {filteredItems.map((item) => (
+              <div 
+                key={item.id} 
+                className="flex-shrink-0 w-[85vw] sm:w-[45vw] lg:w-[30vw] snap-center"
+              >
+                <div className="group/card relative overflow-hidden rounded-[2.5rem] bg-white shadow-xl border border-slate-100 aspect-[4/5]">
+                  {/* Image */}
+                  <img 
+                    src={item.imageUrl} 
+                    alt={item.title} 
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover/card:scale-110"
+                  />
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-6 left-6 z-10">
+                    <span className="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-white/20">
+                      {item.category}
+                    </span>
+                  </div>
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60 group-hover/card:opacity-80 transition-opacity duration-500"></div>
+
+                  {/* Content Overlay */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 transform translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500">
+                    <h4 className="text-white text-2xl md:text-3xl font-black uppercase tracking-tighter leading-none mb-4">
+                      {item.title}
+                    </h4>
+                    
+                    <div className="flex items-center gap-4 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 delay-100">
+                      <a 
+                        href="#contact" 
+                        className="flex-1 bg-orange-500 text-white py-4 rounded-xl font-bold text-center text-sm uppercase tracking-widest hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20"
+                      >
+                        Ver Detalhes
+                      </a>
+                      <a 
+                        href={INSTAGRAM_POST_URL}
+                        target="_blank"
+                        rel="noopener"
+                        className="w-12 h-12 bg-white/20 backdrop-blur-md text-white rounded-xl flex items-center justify-center hover:bg-white hover:text-orange-500 transition-all border border-white/30"
+                      >
+                        <Instagram size={20} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6 md:p-8">
-                <p className="text-orange-400 font-bold text-xs uppercase tracking-wider mb-2">{item.category}</p>
-                <h4 className="text-white text-xl md:text-2xl font-bold leading-tight">{item.title}</h4>
-                {item.id === 7 ? (
-                  <a 
-                    href={INSTAGRAM_POST_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 text-white/80 text-sm font-medium hover:text-white transition-colors"
-                  >
-                    Ver no Instagram →
-                  </a>
-                ) : (
-                  <button className="mt-4 text-white/80 text-sm font-medium hover:text-white transition-colors text-left flex items-center gap-2">
-                    Ver detalhes do projeto →
-                  </button>
-                )}
+            ))}
+
+            {/* View More Card */}
+            <div className="flex-shrink-0 w-[85vw] sm:w-[45vw] lg:w-[30vw] snap-center">
+              <div className="h-full rounded-[2.5rem] bg-slate-900 flex flex-col items-center justify-center p-12 text-center border-4 border-dashed border-slate-700 hover:border-orange-500/50 transition-colors group/more cursor-pointer">
+                <div className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mb-6 group-hover/more:scale-110 transition-transform">
+                  <ArrowUpRight size={40} className="text-orange-500" />
+                </div>
+                <h4 className="text-white text-2xl font-black uppercase tracking-widest mb-4">Ver Tudo no Instagram</h4>
+                <p className="text-slate-400 text-sm leading-relaxed mb-8">Acompanhe nosso dia a dia e veja transformações em tempo real.</p>
+                <a 
+                  href={INSTAGRAM_POST_URL}
+                  target="_blank"
+                  rel="noopener"
+                  className="bg-white text-slate-900 px-8 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-orange-500 hover:text-white transition-all shadow-xl"
+                >
+                  Seguir GP Pintura
+                </a>
               </div>
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Progress Bar for Carousel */}
+        <div className="max-w-xs mx-auto mt-12 h-1 bg-slate-200 rounded-full overflow-hidden">
+          <div 
+            className="h-full bg-orange-500 transition-all duration-300"
+            style={{ 
+              width: scrollRef.current 
+                ? `${((scrollRef.current.scrollLeft + scrollRef.current.clientWidth) / scrollRef.current.scrollWidth) * 100}%` 
+                : '0%' 
+            }}
+          ></div>
         </div>
       </div>
+
+      <style>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 };
