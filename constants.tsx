@@ -34,6 +34,7 @@ export const SERVICES: Service[] = [
 ];
 
 export const PORTFOLIO: PortfolioItem[] = [
+  // Residencial
   { id: 8, title: 'Fachada Moderna', category: 'Residencial', imageUrl: 'https://i.postimg.cc/LsLkGQP0/Casa.jpg' },
   { id: 10, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/QtkrqqtP/2.jpg' },
   { id: 11, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/MTb8YYTD/6.jpg' },
@@ -41,9 +42,10 @@ export const PORTFOLIO: PortfolioItem[] = [
   { id: 13, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/63LNhh3j/3.jpg' },
   { id: 14, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/DZdKccZd/7.jpg' },
   { id: 3, title: 'Revitalização Predial', category: 'Residencial', imageUrl: 'https://cdn.sindiconet.com.br/Conteudos/8157/pintura_fachada_956_667.jpg' },
-  { id: 2, title: 'Escritório Corporativo', category: 'Comercial', imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800' },
-  { id: 4, title: 'Ambiente de Varejo', category: 'Comercial', imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800' },
-  { id: 6, title: 'Galpão Industrial', category: 'Comercial', imageUrl: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800' },
+  
+  // Comercial
+  { id: 20, title: 'Espaços Comerciais', category: 'Comercial', imageUrl: 'https://i.postimg.cc/SQvxCgwg/gp10.jpg' },
+  { id: 21, title: 'Espaços Comerciais', category: 'Comercial', imageUrl: 'https://i.postimg.cc/3rcxmtPF/gp9.jpg' },
 ];
 
 export const LOGO_URL = "https://i.postimg.cc/tJdgyb4N/GP-PINTURA-removebg-preview.png";
