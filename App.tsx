@@ -10,6 +10,8 @@ import { Award, ShieldCheck, Clock, ThumbsUp, Instagram, MapPin, Mail, Briefcase
 import { LOGO_URL, INSTAGRAM_URL } from './constants';
 
 const App: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="relative overflow-x-hidden bg-gp-light">
       <Navbar />
@@ -203,8 +205,18 @@ const App: React.FC = () => {
 
             {/* Bottom Copyright */}
             <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] md:text-xs text-slate-200 uppercase tracking-widest font-bold">
-              <p>Copyright © 2019 - 2026 GP Pintura. Todos os direitos reservados.</p>
-              <p>Criado com <span className="text-[#F2865E]">Excelência</span> para você</p>
+              <p>Copyright © {currentYear} GP Pintura. Todos os direitos reservados.</p>
+              <p>
+                Criado com <span className="text-[#F2865E]">Excelência</span> por{' '}
+                <a 
+                  href="https://www.instagram.com/digital.brtecnologia/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#F2865E] transition-colors underline decoration-dotted underline-offset-4"
+                >
+                  Digital BR Tecnologia
+                </a>
+              </p>
             </div>
           </div>
         </div>
