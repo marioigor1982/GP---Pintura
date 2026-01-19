@@ -1,11 +1,12 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Instagram, ArrowUpRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Instagram, ArrowUpRight, Maximize2, X } from 'lucide-react';
 import { PORTFOLIO, INSTAGRAM_POST_URL } from '../constants';
 import { PortfolioItem } from '../types';
 
 const Portfolio: React.FC = () => {
   const [filter, setFilter] = useState<'Todos' | 'Residencial' | 'Comercial'>('Todos');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
@@ -113,7 +114,10 @@ const Portfolio: React.FC = () => {
                 key={item.id} 
                 className="flex-shrink-0 w-[85vw] sm:w-[45vw] lg:w-[30vw] snap-center"
               >
-                <div className="group/card relative overflow-hidden rounded-[2.5rem] bg-white shadow-xl border border-slate-100 aspect-[4/5]">
+                <div 
+                  onClick={() => setSelectedImage(item.imageUrl)}
+                  className="group/card relative overflow-hidden rounded-[2.5rem] bg-white shadow-xl border border-slate-100 aspect-[4/5] cursor-pointer"
+                >
                   {/* Image */}
                   <img 
                     src={item.imageUrl} 
@@ -134,26 +138,18 @@ const Portfolio: React.FC = () => {
 
                   {/* Content Overlay */}
                   <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 transform translate-y-4 group-hover/card:translate-y-0 transition-transform duration-500">
-                    <h4 className="text-white text-2xl md:text-3xl font-black uppercase tracking-tighter leading-none mb-4">
-                      {item.title}
-                    </h4>
-                    
-                    <div className="flex items-center gap-4 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 delay-100">
-                      <a 
-                        href="#contact" 
-                        className="flex-1 bg-orange-500 text-white py-4 rounded-xl font-bold text-center text-sm uppercase tracking-widest hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20"
-                      >
-                        Ver Detalhes
-                      </a>
-                      <a 
-                        href={INSTAGRAM_POST_URL}
-                        target="_blank"
-                        rel="noopener"
-                        className="w-12 h-12 bg-white/20 backdrop-blur-md text-white rounded-xl flex items-center justify-center hover:bg-white hover:text-orange-500 transition-all border border-white/30"
-                      >
-                        <Instagram size={20} />
-                      </a>
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="text-white text-2xl md:text-3xl font-black uppercase tracking-tighter leading-none">
+                        {item.title}
+                      </h4>
+                      <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white opacity-0 group-hover/card:opacity-100 transition-opacity transform group-hover/card:scale-110">
+                        <Maximize2 size={18} />
+                      </div>
                     </div>
+                    
+                    <p className="text-slate-300 text-xs font-bold uppercase tracking-widest opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 delay-100">
+                      Clique para ampliar
+                    </p>
                   </div>
                 </div>
               </div>
@@ -192,6 +188,41 @@ const Portfolio: React.FC = () => {
           ></div>
         </div>
       </div>
+
+      {/* Lightbox / Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[60] bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4 md:p-10 animate-in fade-in duration-300"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white hover:text-orange-500 transition-colors z-[70] p-2"
+            onClick={(e) => { e.stopPropagation(); setSelectedImage(null); }}
+          >
+            <X size={40} />
+          </button>
+          
+          <img 
+            src={selectedImage} 
+            alt="Expanded Portfolio" 
+            className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+            <a 
+              href={INSTAGRAM_POST_URL}
+              target="_blank"
+              rel="noopener"
+              className="bg-orange-500 text-white px-8 py-3 rounded-full font-black uppercase tracking-widest flex items-center gap-3 hover:bg-orange-600 transition-all shadow-xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Instagram size={20} />
+              Ver no Instagram
+            </a>
+          </div>
+        </div>
+      )}
 
       <style>{`
         .no-scrollbar::-webkit-scrollbar {

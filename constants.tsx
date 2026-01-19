@@ -34,13 +34,16 @@ export const SERVICES: Service[] = [
 ];
 
 export const PORTFOLIO: PortfolioItem[] = [
-  // Residencial
+  // Residencial - Interior Sofisticado (Novas Fotos)
+  { id: 30, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/dQxVr5zk/gp1.jpg' },
+  { id: 31, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/nVPhB36m/gp2.jpg' },
+  { id: 32, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/BZVnHmd1/gp3.jpg' },
+  { id: 33, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/RCDZKgjH/gp4.jpg' },
+  { id: 34, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/ryPwxfv5/gp5.jpg' },
+  { id: 35, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/9XnQZLvd/gp6.jpg' },
+  
+  // Fachadas e Outros Residencial
   { id: 8, title: 'Fachada Moderna', category: 'Residencial', imageUrl: 'https://i.postimg.cc/LsLkGQP0/Casa.jpg' },
-  { id: 10, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/QtkrqqtP/2.jpg' },
-  { id: 11, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/MTb8YYTD/6.jpg' },
-  { id: 12, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/k4Fdyy4y/5.jpg' },
-  { id: 13, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/63LNhh3j/3.jpg' },
-  { id: 14, title: 'Interior Sofisticado', category: 'Residencial', imageUrl: 'https://i.postimg.cc/DZdKccZd/7.jpg' },
   { id: 3, title: 'Revitalização Predial', category: 'Residencial', imageUrl: 'https://cdn.sindiconet.com.br/Conteudos/8157/pintura_fachada_956_667.jpg' },
   
   // Comercial
