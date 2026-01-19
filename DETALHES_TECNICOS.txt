@@ -47,9 +47,9 @@ D) PORTFÓLIO COMERCIAL:
 - Comercial 02: https://i.postimg.cc/3rcxmtPF/gp9.jpg
 
 E) SERVIÇOS (CARDS):
-- Residencial: https://i.postimg.cc/tgzD1Zvw/ali_mkumbwa_1iho4gv_I4_g_unsplash.jpg
+- Residencial: https://i.postimg.cc/qRXdGGRF/1.jpg
 - Comercial: https://i.postimg.cc/HWhkX6f0/gp7.jpg
-- Especiais: https://i.postimg.cc/nVPhB36m/gp2.jpg
+- Especiais: https://i.postimg.cc/LsLkGQP0/Casa.jpg
 
 4. FUNCIONALIDADES DE UX/UI (PORTFÓLIO)
 --------------------------------------------------
@@ -63,6 +63,7 @@ E) SERVIÇOS (CARDS):
 - WhatsApp: 5562981264726
 - Instagram: https://www.instagram.com/pintura.gp/
 - Email: contato@gppintura.com
+- Localização: Anápolis, Goiás, Brasil
 
 Documento atualizado em: Fevereiro/2025
 Propriedade de GP Pintura - Reforma e Construção

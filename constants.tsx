@@ -15,7 +15,7 @@ export const SERVICES: Service[] = [
     title: 'Pintura Residencial',
     description: 'Transformamos seu lar com serviços especializados de pintura interna e externa. Cuidamos de tudo, da preparação ao acabamento final.',
     icon: 'home',
-    imageUrl: 'https://i.postimg.cc/tgzD1Zvw/ali_mkumbwa_1iho4gv_I4_g_unsplash.jpg'
+    imageUrl: 'https://i.postimg.cc/qRXdGGRF/1.jpg'
   },
   {
     id: 'com',
@@ -27,9 +27,9 @@ export const SERVICES: Service[] = [
   {
     id: 'spc',
     title: 'Revestimentos Especiais',
-    description: 'Texturas personalizadas, reforma de armários e revestimentos protetores projetados para durabilidade e apelo estético.',
+    description: 'Texturas personalizadas para ambientes internos e externos, com acabamentos como grafiato, cimento queimado, efeito mármore e texturas acrílicas, unindo resistência, proteção e sofisticação.',
     icon: 'paint',
-    imageUrl: 'https://i.postimg.cc/nVPhB36m/gp2.jpg'
+    imageUrl: 'https://i.postimg.cc/LsLkGQP0/Casa.jpg'
   }
 ];
 

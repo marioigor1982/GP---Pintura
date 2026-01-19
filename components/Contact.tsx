@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900">Localização</h4>
-                  <p className="text-slate-600">Goiânia e Região Metropolitana</p>
+                  <p className="text-slate-600">Anápolis, Goiás, Brasil</p>
                 </div>
               </div>
             </div>

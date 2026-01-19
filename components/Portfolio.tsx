@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Instagram, ArrowUpRight, Maximize2, X } from 'lucide-react';
-import { PORTFOLIO, INSTAGRAM_POST_URL } from '../constants';
+import { ChevronLeft, ChevronRight, Instagram, Maximize2, X } from 'lucide-react';
+import { PORTFOLIO, INSTAGRAM_URL } from '../constants';
 import { PortfolioItem } from '../types';
 
 const Portfolio: React.FC = () => {
@@ -155,22 +155,35 @@ const Portfolio: React.FC = () => {
               </div>
             ))}
 
-            {/* View More Card */}
+            {/* Instagram Iframe Card */}
             <div className="flex-shrink-0 w-[85vw] sm:w-[45vw] lg:w-[30vw] snap-center">
-              <div className="h-full rounded-[2.5rem] bg-slate-900 flex flex-col items-center justify-center p-12 text-center border-4 border-dashed border-slate-700 hover:border-orange-500/50 transition-colors group/more cursor-pointer">
-                <div className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mb-6 group-hover/more:scale-110 transition-transform">
-                  <ArrowUpRight size={40} className="text-orange-500" />
+              <div className="h-full rounded-[2.5rem] bg-white overflow-hidden flex flex-col border border-slate-200 shadow-xl group/insta-card">
+                <div className="flex-1 relative bg-slate-100 min-h-[350px]">
+                   <iframe 
+                    src="https://www.instagram.com/pintura.gp/embed/" 
+                    className="absolute inset-0 w-full h-full border-none"
+                    scrolling="no"
+                    allowTransparency={true}
+                    frameBorder="0"
+                    title="GP Pintura Instagram Feed"
+                   ></iframe>
+                   {/* Capture layer to prevent carousel scrolling issues while providing a link area */}
+                   <div className="absolute inset-0 z-10 bg-transparent cursor-pointer group-hover/insta-card:bg-slate-900/5 transition-colors"></div>
                 </div>
-                <h4 className="text-white text-2xl font-black uppercase tracking-widest mb-4">Ver Tudo no Instagram</h4>
-                <p className="text-slate-400 text-sm leading-relaxed mb-8">Acompanhe nosso dia a dia e veja transformações em tempo real.</p>
-                <a 
-                  href={INSTAGRAM_POST_URL}
-                  target="_blank"
-                  rel="noopener"
-                  className="bg-white text-slate-900 px-8 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-orange-500 hover:text-white transition-all shadow-xl"
-                >
-                  Seguir GP Pintura
-                </a>
+                
+                <div className="p-8 bg-slate-900 text-center">
+                  <h4 className="text-white text-xl font-black uppercase tracking-widest mb-2">Ver Tudo no Instagram</h4>
+                  <p className="text-slate-400 text-xs mb-6 uppercase tracking-widest font-bold">Acompanhe nosso dia a dia</p>
+                  <a 
+                    href={INSTAGRAM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-xl font-black uppercase tracking-widest hover:bg-orange-600 transition-all shadow-lg text-sm"
+                  >
+                    Seguir @pintura.gp
+                    <Instagram size={18} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -211,7 +224,7 @@ const Portfolio: React.FC = () => {
 
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
             <a 
-              href={INSTAGRAM_POST_URL}
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener"
               className="bg-orange-500 text-white px-8 py-3 rounded-full font-black uppercase tracking-widest flex items-center gap-3 hover:bg-orange-600 transition-all shadow-xl"

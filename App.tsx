@@ -103,7 +103,7 @@ const App: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 items-start text-center">
               <div className="flex flex-col items-center px-4 border-r-0 lg:border-r border-white/20 last:border-0">
                 <h4 className="text-white font-black text-xs md:text-sm uppercase tracking-widest mb-4">Endereço</h4>
-                <p className="text-white/90 text-sm md:text-base font-medium max-w-[200px]">Goiânia e Região Metropolitana</p>
+                <p className="text-white/90 text-sm md:text-base font-medium max-w-[200px]">Anápolis, Goiás, Brasil</p>
               </div>
               
               <div className="flex flex-col items-center px-4 border-r-0 lg:border-r border-white/20 last:border-0">
