@@ -5,8 +5,7 @@ GP PINTURA - ESPECIFICAÇÕES TÉCNICAS DO PROJETO
 
 1. PALETA DE CORES OFICIAL
 --------------------------------------------------
-As cores abaixo foram selecionadas para refletir profissionalismo,
-arte e sofisticação em reformas e construções.
+As cores abaixo refletem o posicionamento premium da marca.
 
 - CINZA EXECUTIVO:  #565759 (Textos secundários, Rodapé, Elementos Neutros)
 - LARANJA PRIMARY:  #F2955E (Chamadas de ação, Ícones, Destaques)
@@ -14,41 +13,56 @@ arte e sofisticação em reformas e construções.
 - TERRACOTA ARTE:   #A66D58 (Destaques artísticos, Detalhes de tipografia)
 - OFF-WHITE/LIGHT:  #F2F2F2 (Fundo do site, Seções de contraste)
 
-2. TIPOGRAFIA
+2. TIPOGRAFIA E COMPONENTES
 --------------------------------------------------
 - Fonte Principal: Poppins (Google Fonts)
-- Pesos Utilizados: 300, 400, 500, 600, 700, 900
-- Estilo: Sans-serif moderna, geométrica e de alta legibilidade.
+- Ícones: Lucide React (Home, Building2, PaintBucket, Instagram, etc.)
+- UX Features: Navbar Glassmorphism, Botão WhatsApp flutuante, Lightbox.
 
-3. TECNOLOGIAS UTILIZADAS
+3. INVENTÁRIO DE MÍDIAS (IMAGENS E VÍDEOS)
 --------------------------------------------------
-- Core: React 19 (com ESM Modules)
-- Estilização: Tailwind CSS (Configuração customizada de tema)
-- Ícones: Lucide React (Consistência e leveza)
-- Inteligência Artificial: Google Gemini API (Consultor de Cores Integrado)
-- Efeitos: Backdrop-filter (Glassmorphism), Animações nativas Tailwind.
 
-4. DETALHES DE UX/UI
+A) GERAL & MARCA:
+- Logo: https://i.postimg.cc/tJdgyb4N/GP-PINTURA-removebg-preview.png
+- Sobre (Equipe): https://i.postimg.cc/C1xQ4HWf/premium_photo_1664300519719_fc40ef9122d2.avif
+
+B) HERO (SLIDESHOW):
+- Vídeo 01: https://ik.imagekit.io/marioigor82/media%20azul.mp4
+- Vídeo 02: https://ik.imagekit.io/marioigor82/media.mp4
+- Foto 01: https://i.postimg.cc/tgzD1Zvw/ali_mkumbwa_1iho4gv_I4_g_unsplash.jpg
+- Foto 02: https://i.postimg.cc/SQvxCgwg/gp10.jpg
+
+C) PORTFÓLIO RESIDENCIAL:
+- GP 1: https://i.postimg.cc/dQxVr5zk/gp1.jpg
+- GP 2: https://i.postimg.cc/nVPhB36m/gp2.jpg
+- GP 3: https://i.postimg.cc/BZVnHmd1/gp3.jpg
+- GP 4: https://i.postimg.cc/RCDZKgjH/gp4.jpg
+- GP 5: https://i.postimg.cc/ryPwxfv5/gp5.jpg
+- GP 6: https://i.postimg.cc/9XnQZLvd/gp6.jpg
+- Fachada 01: https://i.postimg.cc/LsLkGQP0/Casa.jpg
+- Fachada 02: https://cdn.sindiconet.com.br/Conteudos/8157/pintura_fachada_956_667.jpg
+
+D) PORTFÓLIO COMERCIAL:
+- Comercial 01: https://i.postimg.cc/SQvxCgwg/gp10.jpg
+- Comercial 02: https://i.postimg.cc/3rcxmtPF/gp9.jpg
+
+E) SERVIÇOS (CARDS):
+- Residencial: https://i.postimg.cc/tgzD1Zvw/ali_mkumbwa_1iho4gv_I4_g_unsplash.jpg
+- Comercial: https://i.postimg.cc/HWhkX6f0/gp7.jpg
+- Especiais: https://i.postimg.cc/nVPhB36m/gp2.jpg
+
+4. FUNCIONALIDADES DE UX/UI (PORTFÓLIO)
 --------------------------------------------------
-- Navbar: Transparente ao topo, efeito vidro (Glassmorphism) ao rolar.
-- Navegação: Ordem personalizada (Início, Serviços, Sobre, Portfólio, Contato).
-- Hero: Slideshow dinâmico com cross-fade de 2s e zoom sutil.
-- Portfólio: Carousel responsivo com snap-scrolling e filtros dinâmicos.
-- Espaçamento: Line-height aumentado em títulos (1.4 - 1.5) para visual premium.
-- Mobile First: Design totalmente responsivo para dispositivos móveis.
-- Footer: Copyright atualizado para 2026 em cor Gelo (text-slate-200).
+- Categorização: Organizado em 'Todos', 'Residencial' e 'Comercial'.
+- Navegação Carousel: Scroll horizontal com snap-points e barra de progresso.
+- Lightbox: Visualização ampliada das fotos ao clicar, com integração para Instagram.
+- Remoção: O botão "Ver Detalhes" foi removido em favor da experiência imersiva da foto.
 
 5. CONTATOS E LINKS
 --------------------------------------------------
 - WhatsApp: 5562981264726
-- Instagram: @pintura.gp
-- Logo: https://i.postimg.cc/tJdgyb4N/GP-PINTURA-removebg-preview.png
-
-6. PORTFÓLIO E PROJETOS
---------------------------------------------------
-- Categorias Consolidadas: Residencial, Comercial.
-- Visualização: Carousel horizontal para "Todos" os projetos com scroll suave.
-- Cartões: Efeito de zoom na imagem e overlay de detalhes ao passar o mouse.
+- Instagram: https://www.instagram.com/pintura.gp/
+- Email: contato@gppintura.com
 
 Documento atualizado em: Fevereiro/2025
 Propriedade de GP Pintura - Reforma e Construção
