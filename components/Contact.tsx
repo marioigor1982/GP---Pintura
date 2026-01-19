@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    service: 'Residential Painting',
+    service: 'Pintura Residencial',
     details: ''
   });
 
@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
       setFormData({
         name: '',
         phone: '',
-        service: 'Residential Painting',
+        service: 'Pintura Residencial',
         details: ''
       });
     } catch (err) {
@@ -165,10 +165,10 @@ const Contact: React.FC = () => {
                       onChange={handleChange}
                       className="w-full bg-white border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:border-orange-500 transition-colors appearance-none shadow-sm cursor-pointer"
                     >
-                      <option value="Residential Painting">Pintura Residencial</option>
-                      <option value="Commercial Painting">Pintura Comercial</option>
-                      <option value="Specialty Coatings">Revestimentos Especiais</option>
-                      <option value="Cabinet Refinishing">Reforma de Armários</option>
+                      <option value="Pintura Residencial">Pintura Residencial</option>
+                      <option value="Pintura Comercial">Pintura Comercial</option>
+                      <option value="Revestimentos Especiais">Revestimentos Especiais</option>
+                      <option value="Reforma de Armários">Reforma de Armários</option>
                     </select>
                   </div>
 

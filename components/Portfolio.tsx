@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { PORTFOLIO, INSTAGRAM_POST_URL } from '../constants';
 
 const Portfolio: React.FC = () => {
-  const [filter, setFilter] = useState('All');
-  const categories = ['All', 'Residential', 'Commercial', 'Special'];
+  const [filter, setFilter] = useState('Todos');
+  const categories = ['Todos', 'Residencial', 'Comercial', 'Especial'];
 
-  const filteredItems = filter === 'All' 
+  const filteredItems = filter === 'Todos' 
     ? PORTFOLIO 
     : PORTFOLIO.filter(item => item.category === filter);
 
@@ -30,7 +30,7 @@ const Portfolio: React.FC = () => {
                   : 'bg-white text-slate-600 hover:bg-slate-200 border border-slate-100 shadow-sm'
                 }`}
               >
-                {cat === 'All' ? 'Todos' : cat === 'Residential' ? 'Residencial' : cat === 'Commercial' ? 'Comercial' : 'Especial'}
+                {cat}
               </button>
             ))}
           </div>

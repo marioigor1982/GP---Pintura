@@ -34,13 +34,14 @@ export const SERVICES: Service[] = [
 ];
 
 export const PORTFOLIO: PortfolioItem[] = [
-  { id: 1, title: 'Sala de Estar Moderna', category: 'Residential', imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800' },
-  { id: 2, title: 'Lobby de Escritório Corporativo', category: 'Commercial', imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800' },
-  { id: 3, title: 'Revitalização de Fachada', category: 'Residential', imageUrl: 'https://cdn.sindiconet.com.br/Conteudos/8157/pintura_fachada_956_667.jpg' },
-  { id: 7, title: 'Projeto Destaque Instagram', category: 'Special', imageUrl: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=800' },
-  { id: 4, title: 'Renovação de Espaço de Varejo', category: 'Commercial', imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800' },
-  { id: 5, title: 'Detalhe de Parede de Destaque', category: 'Special', imageUrl: 'https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&q=80&w=800' },
-  { id: 6, title: 'Pintura de Galpão Industrial', category: 'Commercial', imageUrl: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800' },
+  { id: 8, title: 'Fachadas', category: 'Residencial', imageUrl: 'https://i.postimg.cc/LsLkGQP0/Casa.jpg' },
+  { id: 1, title: 'Sala de Estar Moderna', category: 'Residencial', imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800' },
+  { id: 2, title: 'Lobby de Escritório Corporativo', category: 'Comercial', imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800' },
+  { id: 3, title: 'Revitalização de Fachada', category: 'Residencial', imageUrl: 'https://cdn.sindiconet.com.br/Conteudos/8157/pintura_fachada_956_667.jpg' },
+  { id: 7, title: 'Projeto Destaque Instagram', category: 'Especial', imageUrl: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=800' },
+  { id: 4, title: 'Renovação de Espaço de Varejo', category: 'Comercial', imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800' },
+  { id: 5, title: 'Detalhe de Parede de Destaque', category: 'Especial', imageUrl: 'https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&q=80&w=800' },
+  { id: 6, title: 'Pintura de Galpão Industrial', category: 'Comercial', imageUrl: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800' },
 ];
 
 export const LOGO_URL = "https://i.postimg.cc/tJdgyb4N/GP-PINTURA-removebg-preview.png";
