@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    service: 'Pintura Residencial',
+    service: 'Pintura interna e externa',
     details: ''
   });
 
@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
       setFormData({
         name: '',
         phone: '',
-        service: 'Pintura Residencial',
+        service: 'Pintura interna e externa',
         details: ''
       });
     }, 800);
@@ -174,10 +174,26 @@ const Contact: React.FC = () => {
                       onChange={handleChange}
                       className="w-full bg-white border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all appearance-none shadow-sm cursor-pointer font-medium text-slate-700"
                     >
-                      <option value="Pintura Residencial">Pintura Residencial</option>
-                      <option value="Pintura Comercial">Pintura Comercial</option>
-                      <option value="Revestimentos Especiais">Revestimentos Especiais</option>
-                      <option value="Reforma de Armários">Reforma de Armários</option>
+                      <optgroup label="Paredes e Tetos">
+                        <option value="Pintura interna e externa">Pintura interna e externa</option>
+                        <option value="Aplicação de massa corrida ou acrílica">Massa corrida ou acrílica</option>
+                        <option value="Aplicação de selador e fundo">Selador e fundo preparatório</option>
+                        <option value="Lixamento e correção">Lixamento e correção de imperfeições</option>
+                        <option value="Texturas e grafiato">Aplicação de texturas e grafiato</option>
+                      </optgroup>
+                      <optgroup label="Portões e Metais">
+                        <option value="Pintura de Portões e Metais">Lixamento e Pintura de Portões/Metais</option>
+                        <option value="Fundo anticorrosivo">Aplicação de fundo anticorrosivo</option>
+                      </optgroup>
+                      <optgroup label="Madeiras">
+                        <option value="Verniz e Seladora em Madeiras">Verniz e Seladora em portas/beirais</option>
+                        <option value="Pintura de portas com esmalte">Pintura de portas com tinta esmalte</option>
+                      </optgroup>
+                      <optgroup label="Extras e Reparos">
+                        <option value="Pintura de grades e corrimãos">Pintura de grades e corrimãos</option>
+                        <option value="Pequenos reparos em trincas">Pequenos reparos em trincas</option>
+                        <option value="Outros Serviços">Outros / Manutenção Geral</option>
+                      </optgroup>
                     </select>
                   </div>
 
